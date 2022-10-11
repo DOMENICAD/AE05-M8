@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Noticias</h1>
+<div class="u-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white">
+  <div class="u-container-layout u-similar-container u-container-layout-3">
+  <div alt="" class="u-image u-image-circle u-image-3"></div>
+    <h4 class="u-text u-text-5">Revisa las últimas noticias positivas en Chile y el mundo</h4>
+    <%= image_tag ("01deportes.jpg") %>
+    <%= image_tag ("02farandula.jpg") %>
+    <%= image_tag ("03nacional.jpg") %>
+    <%= image_tag ("04internacional.jpg") %>
+    <%= image_tag ("05politica.jpg") %>
+
+  </div>
+  </div>
+
+
+
+<div id="newspapers">
+  <% @newspapers.each do |newspaper| %>
+    <%= render newspaper %> 
+    <p>
+      <%= link_to "Mostrar esta noticia", newspaper %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Nueva noticia", new_newspaper_path %>
